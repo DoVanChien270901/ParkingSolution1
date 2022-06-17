@@ -1,22 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="/layouts/admin-layout">
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"  
+      layout:decorate="~{layouts/admin-layout.html}">
     <head>
         <meta charset="utf-8">
-        <title>Profile</title>
-        <link rel="icon" type="image/png" href="../vendors/images/icon.png">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="../vendors/styles/core.css">
-        <link rel="stylesheet" type="text/css" href="../vendors/styles/icon-font.min.css">
-        <link rel="stylesheet" type="text/css" href="../src/plugins/datatables/css/dataTables.bootstrap4.min.css">
-        <link rel="stylesheet" type="text/css" href="../src/plugins/datatables/css/responsive.bootstrap4.min.css">
-        <link rel="stylesheet" type="text/css" href="../vendors/styles/style.css">
-        <link rel="stylesheet" type="text/css" href="../vendors/styles/fix.css">
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
-        <script type="text/javascript" src="../vendors/scripts/fix.js"></script>
+        <title>Parking.Go | Profile Page</title>
     </head>
     <body>
-        <div layout:fragment="content">
+        <div class="main-container" layout:fragment="admin-content">
             <div class="pd-ltr-20 xs-pd-20-10">
                 <div class="min-height-200px">
                     <div class="page-header">
@@ -27,7 +17,7 @@
                                 </div>
                                 <nav aria-label="breadcrumb" role="navigation">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                                        <li class="breadcrumb-item"><a href="">Home</a></li>
                                         <li class="breadcrumb-item active" aria-current="page">Profile</li>
                                     </ol>
                                 </nav>
@@ -41,7 +31,7 @@
                                     <div class="profile-photo">
                                         <a href="modal" data-toggle="modal" data-target="#modal" class="edit-avatar"><i
                                                 class="fa fa-pencil"></i></a>
-                                        <img src="../vendors/images/photo.jpg" alt="" class="avatar-photo">
+                                        <img th:src="@{/vendorsc/images/photo.jpg}" alt="" class="avatar-photo">
                                     </div>
                                     <h5 class="text-center h5 mb-0">Admin</h5>
                                     <p class="text-center text-muted font-14"></p>
@@ -53,7 +43,7 @@
                                             <li><b>Date of Birth: </b>20/10/2002</li>
                                             <li><b>Email: </b>admin@example.com</li>
                                             <li><b>Identity Card:</b> 3315628917</li>
-                                            <li><img class="qrcode" src="../vendors/images/qrcode.png" alt=""></li>
+                                            <li><img class="qrcode" th:src="@{/vendorsc/images/qrcode.png}" alt=""></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,29 +72,29 @@
                                                                 <li class="weight-500 col-12 col-sm-6 col-md-6 col-lg-6">
                                                                     <div class="form-group">
                                                                         <label>User Name</label>
-                                                                        <input class="form-control form-control" type="text" disabled>
+                                                                        <input class="form-control form-control" type="text" readonly="true" value="Admin123">
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label>Full Name</label>
-                                                                        <input class="form-control form-control" type="text">
+                                                                        <input class="form-control form-control" type="text" value="Noname123">
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label>Date of birth</label>
-                                                                        <input class="form-control form-control-lg date-picker" type="text">
+                                                                        <input class="form-control form-control-lg date-picker" type="text" value="20/10/2002">
                                                                     </div>
                                                                 </li>
                                                                 <li class="weight-500 col-12 col-sm-6 col-md-6 col-lg-6">
                                                                     <div class="form-group">
                                                                         <label>Identity Card</label>
-                                                                        <input class="form-control form-control" type="text" disabled>
+                                                                        <input class="form-control form-control" type="text" readonly="true" value="3315628917">
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label>Phone Number</label>
-                                                                        <input class="form-control form-control" type="text">
+                                                                        <input class="form-control form-control" type="text" value="0991112553">
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label>Email</label>
-                                                                        <input class="form-control form-control" type="email">
+                                                                        <input class="form-control form-control" type="email" value="admin@example.com">
                                                                     </div>
                                                                 </li>
                                                                 <li class="weight-500 col-12 col-md-12">
@@ -137,33 +127,33 @@
                                                                     </thead>
                                                                     <tbody>
                                                                         <tr>
-                                                                            <td>Bai Dau Xe Le Thi Rieng</td>
-                                                                            <td>590 CMT8, Phuong 10, Quan 3, Ho Chi Minh</td>
+                                                                            <td>Le Thi Rieng Parking Lot</td>
+                                                                            <td>Cach Mang Thang 8, Ward 15, District 10, Ho Chi Minh City, Vietnam</td>
                                                                             <td>19/6/2022</td>
                                                                             <td><span class="badge badge-success">Done !</span></td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td>Bai Dau Xe Le Thi Rieng</td>
-                                                                            <td>590 CMT8, Phuong 10, Quan 3, Ho Chi Minh</td>
+                                                                            <td>Le Thi Rieng Parking Lot</td>
+                                                                            <td>Cach Mang Thang 8, Ward 15, District 10, Ho Chi Minh City, Vietnam</td>
                                                                             <td>15/6/2022</td>
                                                                             <td><span class="badge badge-success">Done !</span></td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td>Bai Dau Xe Le Thi Rieng</td>
-                                                                            <td>590 CMT8, Phuong 10, Quan 3, Ho Chi Minh</td>
+                                                                            <td>Le Thi Rieng Parking Lot</td>
+                                                                            <td>Cach Mang Thang 8, Ward 15, District 10, Ho Chi Minh City, Vietnam</td>
                                                                             <td>12/6/2022</td>
                                                                             <td><span class="badge badge-success">Done !</span></td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td>Bai Dau Xe Le Thi Rieng</td>
-                                                                            <td>590 CMT8, Phuong 10, Quan 3, Ho Chi Minh</td>
-                                                                            <td>8/6/2022</td>
+                                                                            <td>Le Thi Rieng Parking Lot</td>
+                                                                            <td>Cach Mang Thang 8, Ward 15, District 10, Ho Chi Minh City, Vietnam</td>
+                                                                            <td>08/6/2022</td>
                                                                             <td><span class="badge badge-success">Done !</span></td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td>Bai Dau Xe Le Thi Rieng</td>
-                                                                            <td>590 CMT8, Phuong 10, Quan 3, Ho Chi Minh</td>
-                                                                            <td>1/6/2022</td>
+                                                                            <td>Le Thi Rieng Parking Lot</td>
+                                                                            <td>Cach Mang Thang 8, Ward 15, District 10, Ho Chi Minh City, Vietnam</td>
+                                                                            <td>01/6/2022</td>
                                                                             <td><span class="badge badge-success">Done !</span></td>
                                                                         </tr>
                                                                     </tbody>
@@ -180,19 +170,11 @@
                         </div>
                     </div>
                     <div class="footer-wrap pd-20 mb-20 card-box">
-                        Parking Booking Make By <a href="#" target="_blank">T1.2008.A0</a>
+                        Parking.Go Make By <a href="#" target="_blank">T1.2008.A0</a>
                     </div>
                 </div>
             </div>
         </div>
-        <script src="../vendors/scripts/core.js"></script>
-        <script src="../vendors/scripts/script.min.js"></script>
-        <script src="../vendors/scripts/process.js"></script>
-        <script src="../vendors/scripts/layout-settings.js"></script>
-        <script src="../src/plugins/datatables/js/jquery.dataTables.min.js"></script>
-        <script src="../src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
-        <script src="../src/plugins/datatables/js/dataTables.responsive.min.js"></script>
-        <script src="../src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
     </body>
 
 </html>

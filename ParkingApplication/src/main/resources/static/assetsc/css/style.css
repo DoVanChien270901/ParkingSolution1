@@ -390,15 +390,20 @@
     border-right: none;
 }
 
-/*fix css*/
-/* logo */
+/*--------------------------------------------------- Fix.Css ---------------------------------------------------*/
+/* logo navbar */
 
 nav .navbar-brand h4 img {
-    width: 70px;
+    width: 40px;
+}
+
+nav .navbar-brand .span-logo {
+    font-weight: 600;
+    font-size: 22px;
 }
 
 
-/* icon */
+/* icon css */
 
 .fa-github,
 .profile .fa-address-card {
@@ -465,12 +470,12 @@ nav .navbar-brand h4 img {
     width: 140px;
 }
 
-
-/* qr code and form */
-
 .carousel-inner .img-fluid {
-    max-width: 80%;
+    max-width: 78%;
 }
+
+
+/* profile */
 
 .profile h5 .profile-text {
     font-weight: 400;
@@ -492,9 +497,21 @@ nav .navbar-brand h4 img {
     font-style: italic;
 }
 
+.profile lable {
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+
+
+/* btn */
+
 .btn {
     font-family: 'Inter', sans-serif;
 }
+
+
+/* badge */
 
 .badge {
     padding: 0.75em;
@@ -513,6 +530,9 @@ nav .navbar-brand h4 img {
     background-color: #28a745;
 }
 
+
+/* tab list */
+
 .tab-content h2 {
     color: #1b00ff;
 }
@@ -521,6 +541,9 @@ nav .navbar-brand h4 img {
     color: #1b00ff;
     font-family: var(--bs-font-sans-serif);
 }
+
+
+/* form control */
 
 .form-control:disabled,
 .form-control:read-only {
@@ -532,14 +555,7 @@ nav .navbar-brand h4 img {
 }
 
 
-/* .navbar-center {
-    position: absolute;
-    left: 60%;
-    transform: translatex(-60%);
-} */
-
-
-/* ============ desktop view ============ */
+/* ============ Desktop View ============ */
 
 @media all and (min-width: 992px) {
     .navbar .has-megamenu,
@@ -559,16 +575,16 @@ nav .navbar-brand h4 img {
     }
     .navbar-nav.navbar-center {
         position: absolute;
-        left: 60%;
-        transform: translatex(-60%);
+        left: 52%;
+        transform: translatex(-52%);
     }
 }
 
 
-/* ============ desktop view .end// ============ */
+/* ============ Desktop View .End// ============ */
 
 
-/* ============ mobile view ============ */
+/* ============ Mobile View ============ */
 
 @media(max-width: 991px) {
     .navbar.fixed-top .navbar-collapse,
