@@ -4,7 +4,7 @@
     <head>
         <!-- Basic Page Info -->
         <meta charset="utf-8">
-        <title>Admin</title>
+        <title>Parking.Go | Admin Page</title>
         <link rel="icon" type="image/png" th:href="@{/vendorsc/images/icon.png}">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         
@@ -14,9 +14,10 @@
         <link rel="stylesheet" type="text/css" th:href="@{/vendorsc/styles/icon-font.min.css}">
         <link rel="stylesheet" type="text/css" th:href="@{/src/plugins/datatables/css/dataTables.bootstrap4.min.css}">
         <link rel="stylesheet" type="text/css" th:href="@{/src/plugins/datatables/css/responsive.bootstrap4.min.css}">
-        <link rel="stylesheet" type="text/css" thh:href="@{/vendorsc/styles/style.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/vendorsc/styles/style.css}">
         <link rel="stylesheet" type="text/css" th:href="@{/vendorsc/styles/fix.css}">
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
+        <script type="text/javascript" th:src="@{/vendorsc/scripts/fix.js}"></script>
     </head>
 
     <body>
@@ -43,9 +44,8 @@
                             <span class="user-name">Admin</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                            <a class="dropdown-item" th:href="@{/admin/profile.html}"><i class="dw dw-user1"></i> Profile</a>
-                            <a class="dropdown-item" th:href="@{/admin/profile.html}"><i class="dw dw-settings2"></i> Setting</a>          
-                            <a class="dropdown-item" th:href="@{/layouts/login.html}"><i class="dw dw-logout"></i> Log Out</a>
+                            <a class="dropdown-item" href=""><i class="dw dw-user1"></i> Profile</a>
+                            <a class="dropdown-item" href=""><i class="dw dw-logout"></i> Log Out</a>
                         </div>
                     </div>
                 </div>
@@ -65,9 +65,9 @@
 
         <div class="left-side-bar">
             <div class="brand-logo">
-                <a th:href="@{/admin/index.html}">
+                <a href="">
                     <img th:src="@{/vendorsc/images/icon.png}" alt="" class="light-logo">
-                    <span>Parking Booking</span>
+                    <span>arkingGo</span>
                 </a>
                 <div class="close-sidebar" data-toggle="left-sidebar-close">
                     <i class="ion-close-round"></i>
@@ -77,12 +77,12 @@
                 <div class="sidebar-menu">
                     <ul id="accordion-menu">
                         <li>
-                            <a href="@{/admin/index.html}" class="dropdown-toggle no-arrow">
+                            <a href="" class="dropdown-toggle no-arrow">
                                 <span class="micon dw dw-house-1"></span><span class="mtext">Dashboard</span>
                             </a>
                         </li>                      
                         <li>
-                            <a th:href="@{/admin/user.html}" class="dropdown-toggle no-arrow">
+                            <a href="" class="dropdown-toggle no-arrow">
                                 <span class="micon dw dw-user"></span><span class="mtext">User</span>
                             </a>
                         </li>
@@ -91,7 +91,7 @@
                                 <span class="micon dw dw-book"></span><span class="mtext">Parking</span>
                             </a>
                             <ul class="submenu">
-                                <li><a th:href="@{/admin/parking.html}">View</a></li>
+                                <li><a href="">View</a></li>
                                 <li><a href="">History</a></li>
                             </ul>
                         </li>
@@ -100,12 +100,12 @@
                                 <span class="micon dw dw-money"></span><span class="mtext">Recharge</span>
                             </a>
                             <ul class="submenu">
-                                 <li><a th:href="@{/admin/recharge.html}">View</a></li>
+                                <li><a href="">View</a></li>
                                 <li><a href="">History</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a th:href="@{/admin/feedback.html}" class="dropdown-toggle no-arrow">
+                            <a href="" class="dropdown-toggle no-arrow">
                                 <span class="micon dw dw-message"></span><span class="mtext">Feedback</span>
                             </a>
                         </li>
@@ -114,8 +114,9 @@
             </div>
         </div>
         <div class="mobile-menu-overlay"></div>
-        <div class="main-container" layout:fragment="content">
-        </div>
+        <!-- Admin Content Start -->
+        <div class="main-container" layout:fragment="admin-content"></div>
+        <!-- Admin Content End -->
         <script th:src="@{/vendorsc/scripts/core.js}"></script>
         <script th:src="@{/vendorsc/scripts/script.min.js}"></script>
         <script th:src="@{/vendorsc/scripts/process.js}"></script>

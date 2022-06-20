@@ -3,8 +3,8 @@
     <head>
         <!-- Basic Page Info -->
         <meta charset="utf-8">
-        <title>Login</title>
-        <link rel="icon" type="image/png" href="../vendorsc/images/icon.png">
+        <title>Parking.Go | Login Page</title>
+        <link rel="icon" type="image/png" th:href="@{/vendorsc/images/icon.png}">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css"th:href="@{/vendorsc/styles/core.css}">
@@ -21,7 +21,7 @@
                 <div class="brand-logo">
                     <a href="">
                         <img th:src="@{/vendorsc/images/icon.png}" alt="">
-                        <span>Parking Booking</span>
+                        <span>arkingGo</span>
                     </a>
                 </div>
                 <div class="login-menu">
@@ -45,19 +45,25 @@
                             <label class="error-mes " role="alert" th:if="@{errorles}" th:value="${errormes}"></label>
                             <form th:action="@{/account/login}" th:object="${authenticate}" method="POST">
                                 <div class="input-group custom">
-                                    <input th:field="*{username}" type="text" class="form-control form-control-lg" placeholder="Username">
+                                    <input th:field="*{username}" type="text" class="form-control form-control-lg" placeholder="*Username">
                                     <div class="input-group-append custom">
                                         <span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
                                     </div>
+                                    <div class="invalid-feedback">
+                                        <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
+                                    </div>
                                 </div>
-                                <label th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="error-mes">qweqfq</label>
+                                <!--<label th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="error-mes"></label>-->
                                 <div class="input-group custom">
-                                    <input th:field="*{password}" type="password" class="form-control form-control-lg" placeholder="Password">
+                                    <input th:field="*{password}" type="password" class="form-control form-control-lg" placeholder="*Password">
                                     <div class="input-group-append custom">
                                         <span class="input-group-text"><i class="dw dw-padlock1"></i></span>
                                     </div>
+                                        <div class="invalid-feedback">
+                                        <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+                                    </div>
                                 </div>
-                                <label th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="error-mes"></label>
+                                <!--<label th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="error-mes"></label>-->
                                 <div class="row pb-30">
                                     <div class="col-6">
                                         <div class="custom-control custom-checkbox">
@@ -66,7 +72,7 @@
                                         </div>
                                     </div>
                                     <div class="col-6">
-                                        <div class="forgot-password"><a href="../forgot-password.html">Forgot Password</a></div>
+                                        <div class="forgot-password"><a href="">Forgot Password</a></div>
                                     </div>
                                 </div>
                                 <div class="row">
