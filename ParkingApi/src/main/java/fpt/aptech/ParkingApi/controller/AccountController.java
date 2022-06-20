@@ -67,6 +67,9 @@ public class AccountController {
             res.setToken(jwt);
             Object[] role = userDetails.getAuthorities().toArray();
             res.setRole(Roles.valueOf(role[0].toString()));
+            ProfileRes profile = _profileService.getByUserName(authenticateRequest.getUsername());
+            res.setFullname(profile.getFullname());
+            res.setEmail(profile.getEmail());
             return ResponseEntity.ok(res);
         } catch (UsernameNotFoundException e) {
             return new ResponseEntity(e, HttpStatus.BAD_REQUEST);
@@ -122,11 +125,11 @@ public class AccountController {
 //        }
 //    }
 //
-//    //test
-//    @RequestMapping(value = "/", method = RequestMethod.GET)
-//    public String getListUser() {
-//        return "hello";
-//    }
+    //test
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String getListUser() {
+        return "hello";
+    }
 //    @RequestMapping(value = "/user", method = RequestMethod.PUT)
 //    public ResponseEntity editUser(@RequestBody EditProfileReq editProfileReq, @RequestHeader("Authorization") String token) {
 //        try {

@@ -15,9 +15,9 @@ import android.widget.Toast;
 
 import fpt.aptech.parkinggo.R;
 
-import fpt.aptech.parkinggo.activity.MainUserActivity;
+import fpt.aptech.parkinggo.activity.HomeActivity;
 import fpt.aptech.parkinggo.configuration.RestTemplateConfiguration;
-import fpt.aptech.parkinggo.modelbuilder.LoginReqBuilder;
+import fpt.aptech.parkinggo.domain.modelbuilder.LoginReqBuilder;
 import fpt.aptech.parkinggo.domain.request.LoginReq;
 import fpt.aptech.parkinggo.domain.response.LoginRes;
 import fpt.aptech.parkinggo.statics.Session;
@@ -73,10 +73,10 @@ public class LoginTask extends AsyncTask<Void, Integer, ResponseEntity<?>> {
             Session.setSession(loginRes);
             Intent intent;
             switch (loginRes.getRole()){
-                case user: intent = new Intent(activity.getApplicationContext(), MainUserActivity.class);
-                case admin: intent = new Intent(activity.getApplicationContext(), MainUserActivity.class);
-                case handle: intent = new Intent(activity.getApplicationContext(), MainUserActivity.class);
-                default: intent = new Intent(activity.getApplicationContext(), MainUserActivity.class);
+                case user: intent = new Intent(activity.getApplicationContext(), HomeActivity.class);
+                case admin: intent = new Intent(activity.getApplicationContext(), HomeActivity.class);
+                case handle: intent = new Intent(activity.getApplicationContext(), HomeActivity.class);
+                default: intent = new Intent(activity.getApplicationContext(), HomeActivity.class);
             }
             progressDialog.dismiss();
             activity.startActivity(intent);

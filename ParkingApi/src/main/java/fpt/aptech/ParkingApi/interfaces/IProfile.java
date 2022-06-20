@@ -17,5 +17,5 @@ public interface IProfile {
     PageProfileRes findAll(int page, int size);
     ProfileRes getByUserName(String username);
     void create(RegisterReq registerReq);
-    boolean edit(EditProfileReq editProfileReq);
+    boolean edit(EditProfileReq editProfileReq, String username);
 }

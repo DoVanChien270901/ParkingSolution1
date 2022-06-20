@@ -56,7 +56,7 @@ public class QrCodeService implements IQrCode {
     public void create(AddQrReq addQrReq, String username) {
         Profile profile = _profileRepository.getByUsername(username);
         if (profile.getUsername().equals(username)) {
-            byte[] byteContent = _qrCodeUtil.generQrCode(addQrReq.getContent(), 500, 500);
+            byte[] byteContent = _qrCodeUtil.generQrCode(addQrReq.getContent(), 650, 650);
             Qrcode qrcode = new Qrcode();
             qrcode.setTitle(addQrReq.getTitle());
             qrcode.setAccountid(profile);
@@ -71,8 +71,8 @@ public class QrCodeService implements IQrCode {
     }
 
     @Override
-    public Boolean edit(ProfileQrContent profileQrContent, String title) {
-        Qrcode qrcode = _qrcodeRepository.getByUserName(profileQrContent.getUsername(), title);
+    public Boolean edit(ProfileQrContent profileQrContent, String username, String title) {
+        Qrcode qrcode = _qrcodeRepository.getByUserName(username, title);
         if (qrcode != null) {
             //decode Qr
 //                ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(qrcode.getContent());
@@ -86,7 +86,7 @@ public class QrCodeService implements IQrCode {
 //                Gson g = new Gson();
 //                ProfileQrContent objectContent = g.fromJson(stringJson, ProfileQrContent.class);
 
-            byte[] byteContent = _qrCodeUtil.generQrCode(profileQrContent, 500, 500);
+            byte[] byteContent = _qrCodeUtil.generQrCode(profileQrContent, 650, 650);
             qrcode.setContent(byteContent);
             _qrcodeRepository.save(qrcode);
             return true;

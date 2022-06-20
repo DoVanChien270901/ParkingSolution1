@@ -6,7 +6,7 @@ package fpt.aptech.ParkingApi.dto.response;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Date;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  *
@@ -16,6 +16,7 @@ public class ProfileRes implements Serializable {
 
     private Integer identitycard;
     private String fullname;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate dob;
     private Double balance;
     private String email;

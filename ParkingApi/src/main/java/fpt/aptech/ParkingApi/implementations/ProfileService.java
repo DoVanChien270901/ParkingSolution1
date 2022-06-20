@@ -66,10 +66,11 @@ public class ProfileService implements IProfile {
     }
 
     @Override
-    public boolean edit(EditProfileReq editProfileReq) {
-        Profile profile = _profileRepository.getByUsername(editProfileReq.getUsername());
+    public boolean edit(EditProfileReq editProfileReq, String username) {
+        Profile profile = _profileRepository.getByUsername(username);
         if (profile != null) {
             profile = _mapper.map(editProfileReq, Profile.class);
+            profile.setUsername(username);
             _profileRepository.save(profile);
             return true;
         } else {

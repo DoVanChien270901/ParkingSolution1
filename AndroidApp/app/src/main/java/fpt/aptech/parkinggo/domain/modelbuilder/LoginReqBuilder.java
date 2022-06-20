@@ -1,4 +1,4 @@
-package fpt.aptech.parkinggo.modelbuilder;
+package fpt.aptech.parkinggo.domain.modelbuilder;
 
 import fpt.aptech.parkinggo.domain.request.LoginReq;
 

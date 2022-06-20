@@ -14,8 +14,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/home")
 public class HomeController {
+
     @RequestMapping("/user")
-    public String home(){
-    return "user/index";
+    public String homeUser() {
+        return "user/index";
+    }
+
+    @RequestMapping("/admin")
+    public String homeAdmin() {
+        String a = "vanchien";
+        return "layouts/admin-layout";
     }
 }

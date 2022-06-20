@@ -4,7 +4,8 @@
  */
 package fpt.aptech.ParkingApi.dto.request;
 
-import java.util.Date;
+import java.time.LocalDate;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  *
@@ -12,22 +13,14 @@ import java.util.Date;
  */
 public class EditProfileReq {
 
-    private String username;
     private Integer identitycard;
     private String fullname;
-    private Date dob;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private LocalDate dob;
     private String email;
     private Integer phone;
 
     public EditProfileReq() {
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public Integer getIdentitycard() {
@@ -46,11 +39,11 @@ public class EditProfileReq {
         this.fullname = fullname;
     }
 
-    public Date getDob() {
+    public LocalDate getDob() {
         return dob;
     }
 
-    public void setDob(Date dob) {
+    public void setDob(LocalDate dob) {
         this.dob = dob;
     }
 
