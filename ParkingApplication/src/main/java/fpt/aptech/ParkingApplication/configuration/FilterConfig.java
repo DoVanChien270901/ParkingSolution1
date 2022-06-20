@@ -23,7 +23,7 @@ public class FilterConfig implements Filter{
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         String token;
         try {
-            token = request.getSession().getAttribute("token").toString();
+            token = request.getSession().getAttribute("account").toString();
         } catch (Exception e) {
              token = null;
         }

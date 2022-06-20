@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import fpt.aptech.parkinggo.R;
 
-public class MainUserActivity extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_user);
+        setContentView(R.layout.activity_profile);
     }
 }

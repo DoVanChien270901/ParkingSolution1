@@ -64,11 +64,10 @@ public class ProfileController {
     public ResponseEntity editUser(@RequestBody EditProfileReq editProfileReq, @RequestHeader("Authorization") String token) {
         try {
             String username = _jwtTokenUtil.extracUsername(token.substring(7));
-            editProfileReq.setUsername(username);
-            _profileService.edit(editProfileReq);
+            _profileService.edit(editProfileReq, username);
             ProfileQrContent qrContent = _mapper.map(editProfileReq, ProfileQrContent.class);
-            _qrCodeService.edit(qrContent, TitleQrCode.PROFILE.toString());
-            return new ResponseEntity(HttpStatus.OK);
+            _qrCodeService.edit(qrContent, username, TitleQrCode.PROFILE.toString());
+            return new ResponseEntity("Successful", HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity(e, HttpStatus.BAD_REQUEST);
         }

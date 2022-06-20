@@ -4,6 +4,8 @@ import fpt.aptech.parkinggo.domain.enumm.Roles;
 
 public class LoginRes {
     private String token;
+    private String fullname;
+    private String email;
     private Roles role;
 
     public LoginRes() {
@@ -17,6 +19,22 @@ public class LoginRes {
         this.token = token;
     }
 
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public Roles getRole() {
         return role;
     }
@@ -24,4 +42,6 @@ public class LoginRes {
     public void setRole(Roles role) {
         this.role = role;
     }
+
+
 }
